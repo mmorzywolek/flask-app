@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<head><title>Test</title>
+        <h1>Pierwsza strona Flask</h1>
+            <button> <a href="/my-link/">Do not click</a></button>
+            <div id="slidecontainer">
+                <p>Wprowadź parametr liczbowy</p>
+                <form method="POST" action="test">
+                    <input type="range" id="slider" min="0" max="100" step="5" name="slider" />
+                    <input type="submit" value="Wprowadź"/>
+                    <p>Value: <span id="demo"></span></p>
+                </form>
+            </div>
+<script>
+var slider = document.getElementById("slider");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+</body>
+</html>
+            <p>Podaj swoje imię:</p>
+                <form method ="post" action="login">
+                    <p><input type = "text" name = "nm" /></p>
+                    <p><input type = "submit" value = "Wprowadź" /></p>
+                </form>
+
+
+</body>
+
+
+{% endblock %}
