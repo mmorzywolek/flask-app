@@ -3,9 +3,14 @@
 {% block body %}
 
 
-<head><title>Test</title>
-        <h1>Pierwsza strona Flask</h1>
-            <button> <a href="/my-link/">Do not click</a></button>
+<head><title>Testowa aplikacja do nauki</title>
+        <h1>Mini web-app in Flask</h1>
+            <h2>1. Button</h2>
+            <button>
+                <a href="{{ url_for('my_link') }}">Do not click</a>
+            </button>
+    <p></p>
+            <h2>2. Slider with Javascript element</h2>
             <div id="slidecontainer">
                 <p>Wprowadź parametr liczbowy</p>
                 <form method="POST" action="test">
@@ -23,17 +28,16 @@ slider.oninput = function() {
   output.innerHTML = this.value;
 }
 </script>
-
-</body>
-</html>
+            <h2>3. User input form</h2>
             <p>Podaj swoje imię:</p>
                 <form method ="post" action="login">
                     <p><input type = "text" name = "nm" /></p>
                     <p><input type = "submit" value = "Wprowadź" /></p>
                 </form>
-
-
-</body>
+    <h2>Login form</h2>
+            <button> <a href="{{ url_for('form') }}">Login</a></button>
+</head>
+</html>
 
 
 {% endblock %}
